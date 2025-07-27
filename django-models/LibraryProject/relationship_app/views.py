@@ -9,8 +9,8 @@ from .models import Book, Library, Librarian
 # This view should render a simple text list of book titles and their authors.
 def list_books(request):
     books = Book.objects.all()
-    return render(request, 'list_books.html', {'books': books})
-
+    return render(request, 'relationship_app/list_books.html', {'books': books})
+   
 
 class LibraryDetailView(DetailView):
     model = Library
