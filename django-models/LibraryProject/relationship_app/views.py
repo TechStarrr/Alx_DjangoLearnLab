@@ -6,15 +6,15 @@ from .forms import CustomUserCreationForm
 from .models import Book, Library, Librarian
 
 # Create your views here.
-# This view should render a simple text list of book titles and their authors.
+
 def list_books(request):
     books = Book.objects.all()
     return render(request, 'relationship_app/list_books.html', {'books': books})
    
-
+# This view should render a class based view not function based view .
 class LibraryDetailView(DetailView):
     model = Library
-    template_name = 'library_detail.html'
+    template_name = 'relationship_app/library_detail.html'
     context_object_name = 'library'
 
 
