@@ -3,7 +3,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.views import LoginView, LogoutView
 from django.views import View
 from .forms import CustomUserCreationForm
-from .models import Book, Library, Librarian
+from .models import Book
+from .models import Library, Librarian
 
 # Create your views here.
 
