@@ -16,11 +16,11 @@ for book in books_by_author:
 
 # 2. List all books in a library
 library = Library.objects.get(name="National Library")
-books_in_library = library.books.all()
-print("\nBooks in National Library:")
-for book in books_in_library:
-    print(book.title)
+library.books.all()
+# print("\nBooks in National Library:")
+# for book in books_in_library:
+#     print(book.title)
 
 # 3. Retrieve the librarian for a library
 librarian = Librarian.objects.get(library=library)
-print(f"\nLibrarian for {library.name}: {librarian.name}")
+print(f"Librarian for {library.name}: {librarian.name}")
