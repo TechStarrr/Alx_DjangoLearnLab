@@ -41,8 +41,8 @@ print(f"Librarian for {library.name}: {librarian.name}")
 
 def get_librarian(librarian_name):
     try:
-        librarian_name = Librarian.objects.get(name=librarian)
-        librarian_name = Library.objects.filter(librarian=librarian_name)
+        librarian_name = Librarian.objects.get(library=librarian)
+        librarian= Library.objects.filter(library=librarian_name)
         return librarian_name
     except Author.DoesNotExist:
         print(f"No author found with name: {author_name}")
