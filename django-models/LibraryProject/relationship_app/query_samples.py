@@ -23,6 +23,15 @@ author_name = "Chinua Achebe"
 author = Author.objects.get(name= author_name)
 Book.objects.filter(author=author)
 
+def get_books_by_author(author_name):
+    try:
+        author = Author.objects.get(name=author_name)
+        books = Book.objects.filter(author=author)
+        return books
+    except Author.DoesNotExist:
+        print(f"No author found with name: {author_name}")
+        return []
+
 
 
 # 3. Retrieve the librarian for a library
