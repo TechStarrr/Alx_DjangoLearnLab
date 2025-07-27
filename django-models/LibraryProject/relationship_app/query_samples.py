@@ -21,10 +21,8 @@ def get_library_by_name(library_name):
 # 1. Query all books by a specific author
 author_name = "Chinua Achebe"
 author = Author.objects.get(name= author_name)
-books_by_author = Book.objects.filter(author=author)
+author.books.all()
 print("Books by Chinua Achebe:")
-for book in books_by_author:
-    print(book.title)
 
 
 # 3. Retrieve the librarian for a library
