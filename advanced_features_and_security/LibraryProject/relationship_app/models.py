@@ -3,6 +3,16 @@ from .managers import CustomUserManager
 from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
+class CustomUser(AbstractUser):
+    date_of_birth = models.DateField(null=True, blank=True)
+    profile_photo = models.ImageField(upload_to='profile_photos/', null=True, blank=True)
+
+    objects = CustomUserManager()  # Link to custom manager
+
+    def __str__(self):
+        return self.username
+
+
 class Author(models.Model):
     name = models.CharField(max_length= 200, null=True, blank=True)
 
@@ -54,11 +64,3 @@ class UserProfile(models.Model):
     
     
 
-class CustomUser(AbstractUser):
-    date_of_birth = models.DateField(null=True, blank=True)
-    profile_photo = models.ImageField(upload_to='profile_photos/', null=True, blank=True)
-
-    objects = CustomUserManager()  # Link to custom manager
-
-    def __str__(self):
-        return self.username
