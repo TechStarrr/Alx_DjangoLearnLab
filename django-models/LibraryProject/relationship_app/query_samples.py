@@ -7,6 +7,7 @@ from relationship_app.models import Librarian
 # 2. List all books in a library
 library_name = "Central Library"  # Or whatever name you're searching
 library = Library.objects.get(name=library_name)
+library.books.all()
 print(library)
 
 def get_library_by_name(library_name):
