@@ -4,8 +4,9 @@ from .models import Book, Library, Librarian
 # Create your views here.
 
 def list_books(request):
-    books = Book.objects.select_related('author').all()
+    books = Book.objects.all()
     return render(request, 'list_books.html', {'books': books})
+
 
 class LibraryDetailView(DetailView):
     model = Library
