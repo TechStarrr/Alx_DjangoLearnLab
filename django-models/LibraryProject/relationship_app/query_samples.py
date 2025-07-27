@@ -19,7 +19,8 @@ def get_library_by_name(library_name):
 
 
 # 1. Query all books by a specific author
-author = Author.objects.get(name="Chinua Achebe")
+author_name = "Chinua Achebe"
+author = Author.objects.get(name= author_name)
 books_by_author = Book.objects.filter(author=author)
 print("Books by Chinua Achebe:")
 for book in books_by_author:
@@ -27,5 +28,6 @@ for book in books_by_author:
 
 
 # 3. Retrieve the librarian for a library
-librarian = Librarian.objects.get(library=library)
+librarian_name = "Okafor chinyere"
+librarian = Librarian.objects.get(librarian=librarian_name)
 print(f"Librarian for {library.name}: {librarian.name}")
