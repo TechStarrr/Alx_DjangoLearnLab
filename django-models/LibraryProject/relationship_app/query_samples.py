@@ -38,3 +38,12 @@ def get_books_by_author(author_name):
 librarian_name = "Okafor chinyere"
 librarian = Librarian.objects.get(librarian=librarian_name)
 print(f"Librarian for {library.name}: {librarian.name}")
+
+def get_librarian(librarian_name):
+    try:
+        librarian_name = Librarian.objects.get(name=librarian)
+        librarian_name = Library.objects.filter(librarian=librarian_name)
+        return librarian_name
+    except Author.DoesNotExist:
+        print(f"No author found with name: {author_name}")
+        return []
