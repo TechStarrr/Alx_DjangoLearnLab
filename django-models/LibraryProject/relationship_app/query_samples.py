@@ -1,15 +1,9 @@
-# import os
-# import django
-
-# Setup Django
-# os.environ.setdefault("DJANGO_SETTINGS_MODULE", "your_project_name.settings")
-# django.setup()
-
 from relationship_app.models import Author, Book, Library, Librarian
 
-Library.objects.get(name="city_library")
+
 # 2. List all books in a library
 library = Library.objects.get(name="National Library")
+Library.objects.get(name="city_library")
 library_books = library.books.all()
 print(library_books)
 # for book in books_in_library:
