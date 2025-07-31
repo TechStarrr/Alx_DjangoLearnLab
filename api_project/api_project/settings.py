@@ -46,6 +46,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',  # ← Add this
         'rest_framework.authentication.SessionAuthentication',  # Optional (for browsable API login)
+        "rest_framework.permissions.IsAuthenticated"
     ],
 }
 
